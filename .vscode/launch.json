@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build simple_compute",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-Wall",
+                "-Wextra",
+                "-std=c11",
+                "-I${workspaceFolder}/include",
+                "${workspaceFolder}/src/bm_utils.c",
+                "${workspaceFolder}/src/bm_device.c",
+                "${workspaceFolder}/src/bm_buffer.c",
+                "${workspaceFolder}/src/bm_kernel.c",
+                "${workspaceFolder}/src/bm_backend_cpu.c",
+                "${workspaceFolder}/examples/simple_compute.c",
+                "-o",
+                "${workspaceFolder}/build/simple_compute"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$gcc"
+        }
+    ]
+}
+
